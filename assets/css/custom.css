@@ -1,0 +1,158 @@
+/* Floating Buttons */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.floating-buttons a {
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+.whatsapp-btn {
+  background-color: #25D366;
+}
+.whatsapp-btn:hover {
+  background-color: #1ebe57;
+}
+.email-btn {
+  background-color: #007bff;
+}
+.email-btn:hover {
+  background-color: #0056b3;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Service Item Styles */
+.service-item .checkbox {
+  margin-top: 8px;
+}
+.service-item .checkbox input {
+  margin-right: 8px;
+}
+.service-item h4 {
+  font-size: 2rem; /* 28px */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.service-item ul {
+  font-size: 16px;
+}
+
+/* Tooltip Styles */
+.info-icon {
+  position: relative;
+  cursor: pointer;
+  color: #007bff;
+  transition: color 0.3s ease;
+}
+.info-icon:hover, .info-icon:focus {
+  color: #0056b3;
+}
+.info-icon .tooltip {
+  visibility: hidden;
+  position: absolute;
+  top: -10px;
+  left: 100%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 250px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.info-icon:hover .tooltip, .info-icon:focus .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.info-icon .tooltip::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #333 transparent transparent;
+}
+
+/* Font Sizes */
+h4 {
+  font-size: 2rem; /* 28px */
+}
+p, .service-item ul li, .footer-widget p, .footer-widget ul li a {
+  font-size: 1.125rem; /* 18px */
+}
+.main-button, .border-button a, .text-button a {
+  font-size: 1rem; /* 16px */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .floating-buttons {
+    bottom: 10px;
+    right: 10px;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .floating-buttons a {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+  h4 {
+    font-size: 1.5rem; /* 24px */
+  }
+  p, .service-item ul li {
+    font-size: 1rem; /* 16px */
+  }
+  .service-item h4 {
+    font-size: 1.5rem;
+  }
+  .main-banner h2 {
+    font-size: 1.75rem; /* 28px */
+  }
+  .quote-form input, .quote-form button {
+    font-size: 14px;
+  }
+  .info-icon .tooltip {
+    width: 200px;
+    font-size: 12px;
+    top: -80px;
+    left: 50%;
+  }
+  .info-icon .tooltip::before {
+    top: auto;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: #333 transparent transparent transparent;
+  }
+}
+@media (max-width: 576px) {
+  .service-item {
+    margin-bottom: 15px;
+  }
+  .quote-form .row {
+    flex-direction: column;
+  }
+  .quote-form .col-lg-6 {
+    width: 100%;
+  }
+}

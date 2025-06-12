@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Asesoría gastronómica y administrativa para optimizar tu negocio de alimentos y bebidas. Obtén resoluciones sanitarias, optimización de costos, capacitaciones BPM y HACCP, y más.">
+  <meta name="author" content="Anaiz Burgos">
+  <meta name="keywords" content="asesoría gastronómica, optimización de costos, resolución sanitaria, capacitaciones HACCP, gestión administrativa">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <title>Asesoría Gastronómica - Optimiza tu Negocio</title>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+  <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #333333;
+      --header-bg: #f8f9fa;
+      --button-bg: #007bff;
+      --button-hover-bg: #0056b3;
+      --card-bg: #ffffff;
+      --card-shadow: rgba(0, 0, 0, 0.1);
+      --section-bg: #f8f9fa;
+      --link-color: #007bff;
+      --link-hover-color: #0056b3;
+    }
+    [data-theme="dark"] {
+      --bg-color: #1a1a1a;
+      --text-color: #e0e0e0;
+      --header-bg: #2c2c2c;
+      --button-bg: #1e90ff;
+      --button-hover-bg: #1c86ee;
+      --card-bg: #2c2c2c;
+      --card-shadow: rgba(255, 255, 255, 0.1);
+      --section-bg: #222222;
+      --link-color: #4dabf7;
+      --link-hover-color: #74c0fc;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+    /* Ensure all text elements use --text-color */
+    h1, h2, h3, h4, h5, h6, p, li, span, a, .section-heading, .client-content, .right-content, .rating, .category, .date {
+      color: var(--text-color) !important;
+    }
+    /* Navigation links */
+    .main-nav .nav a {
+      color: var(--text-color) !important;
+    }
+    .main-nav .nav a:hover, .main-nav .nav a.active {
+      color: var(--link-color) !important;
+    }
+    /* Service items */
+    .service-item, .pricing-item-regular, .pricing-item-pro {
+      background-color: var(--card-bg);
+      box-shadow: 0 4px 8px var(--card-shadow);
+      color: var(--text-color);
+    }
+    .service-item h4, .service-item p, .service-item li, .service-item a {
+      color: var(--text-color) !important;
+    }
+    .service-item .icon i {
+      color: var(--text-color) !important;
+    }
+    /* Buttons */
+    .white-button a, .border-button a, .main-button {
+      background-color: var(--button-bg);
+      color: #ffffff !important;
+    }
+    .white-button a:hover, .border-button a:hover, .main-button:hover {
+      background-color: var(--button-hover-bg);
+      color: #ffffff !important;
+    }
+    .floating-buttons a {
+      background-color: var(--button-bg);
+      color: #ffffff !important;
+    }
+    .floating-buttons a:hover {
+      background-color: var(--button-hover-bg);
+    }
+    .whatsapp-btn {
+      background-color: #25D366;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1ebe57;
+    }
+    .email-btn {
+      background-color: var(--button-bg);
+    }
+    .email-btn:hover {
+      background-color: var(--button-hover-bg);
+    }
+    /* Footer */
+    .footer-widget, .footer-widget a {
+      color: var(--text-color) !important;
+    }
+    .footer-widget a:hover {
+      color: var(--link-color) !important;
+    }
+    /* Links */
+    a {
+      color: var(--link-color) !important;
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--link-hover-color) !important;
+    }
+    /* Theme toggle button */
+    .theme-toggle {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-color);
+      margin-left: 20px;
+    }
+    .theme-toggle i {
+      transition: transform 0.3s ease;
+    }
+    .theme-toggle:hover i {
+      transform: scale(1.2);
+    }
+    /* Floating buttons */
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .floating-buttons a {
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    /* Service checkboxes */
+    .service-item .checkbox {
+      margin-top: 10px;
+    }
+    .service-item .checkbox input {
+      margin-right: 5px;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    /* Tooltip */
+    .info-btn {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: var(--button-bg);
+      color: white;
+      text-align: center;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-left: 10px;
+      font-size: 14px;
+      line-height: 20px;
+      position: relative;
+    }
+    .info-btn:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: -100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      width: 300px;
+      z-index: 10;
+      font-size: 12px;
+      text-align: left;
+    }
+    [data-theme="dark"] .info-btn:hover::after {
+      background-color: #555;
+      color: #ffffff;
+    }
+    /* Override Bootstrap or external styles */
+    .header-area, .main-banner, .services, .about-us, .the-clients, .pricing-tables, footer {
+      background-color: var(--section-bg);
+      color: var(--text-color);
+    }
+    .section-heading h4, .section-heading p {
+      color: var(--text-color) !important;
+    }
+    .client-content p, .right-content h4, .right-content span {
+      color: var(--text-color) !important;
+    }
+    .naccs .menu div, .naccs .menu div h4, .naccs .menu div span {
+      color: var(--text-color) !important;
+    }
+    .fa-star {
+      color: #f1c40f !important; /* Keep star icons gold for visibility */
+    }
+  </style>
+</head>
+<body>
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo_Anaiz.png" alt="Asesoría Gastronómica Anaiz Burgos">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
+              <li class="scroll-to-section"><a href="#services">Servicios</a></li>
+              <li class="scroll-to-section"><a href="#about">Nosotros</a></li>
+              <li class="scroll-to-section"><a href="#pricing">Precios</a></li>
+              <li class="scroll-to-section"><a href="#newsletter">Boletín</a></li>
+              <li><button class="theme-toggle" id="theme-toggle" title="Cambiar tema"><i class="fas fa-moon"></i></button></li>
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menú</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h2>Optimiza tu Negocio Gastronómico</h2>
+                    <p>Ofrecemos asesorías gastronómicas y administrativas para llevar tu restaurante o negocio de alimentos al siguiente nivel. Desde optimización de costos hasta cumplimiento de normativas sanitarias, estamos aquí para ayudarte.</p>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="white-button first-button scroll-to-section">
+                      <a href="#services">Solicita una Cotización <i class="fas fa-utensils"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="assets/images/slider-dec.png" alt="Restaurante">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Servicios <em>Gastronómicos y Administrativos</em> de Excelencia</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Transforma tu negocio con nuestras soluciones integrales para optimizar procesos, reducir costos y cumplir con normativas. Selecciona los servicios que necesitas y solicita una cotización personalizada.</p>
+            <p>Haz click en el servicio que necesites y luego aprieta el boton de contacto preferido</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="service-item first-service">
+            <div class="icon"><i class="fas fa-calculator fa-2x"></i></div>
+            <h4>Fichas Técnicas y Costos <span class="info-btn" data-tooltip="Análisis detallado de costos por menú o receta para maximizar márgenes. Puede aumentar tus ventas en un 10-15% al optimizar precios y reducir desperdicios, dándote una ventaja sobre competidores con márgenes bajos."></span></h4>
+            <ul>
+              <li><input type="checkbox" class="service-checkbox" value="Cálculos de costo por menú, plato o receta"> Cálculos de costo por menú, plato o receta</li>
+              <li><input type="checkbox" class="service-checkbox" value="Análisis de costos de producción"> Análisis de costos de producción</li>
+              <li><input type="checkbox" class="service-checkbox" value="Evaluación de márgenes de ganancia"> Evaluación de márgenes de ganancia</li>
+            </ul>
+            <div class="text-button">
+              <a href="#contact">Más Información <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item second-service">
+            <div class="icon"><i class="fas fa-cogs fa-2x"></i></div>
+            <h4>Optimización Laboral <span class="info-btn" data-tooltip="Mejora la eficiencia operativa reduciendo desperdicios y optimizando flujos. Puede incrementar tus ventas en un 15-20% al reducir costos operativos, posicionándote por delante de competidores con procesos ineficientes."></span></h4>
+            <ul>
+              <li><input type="checkbox" class="service-checkbox" value="Optimización de insumos y reducción de desperdicios"> Optimización de insumos y reducción de desperdicios</li>
+              <li><input type="checkbox" class="service-checkbox" value="Organización de flujos y horarios de trabajo"> Organización de flujos y horarios de trabajo</li>
+              <li><input type="checkbox" class="service-checkbox" value="Sistemas de control (inventarios, compras, proveedores)"> Sistemas de control (inventarios, compras, proveedores)</li>
+            </ul>
+            <div class="text-button">
+              <a href="#contact">Más Información <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item third-service">
+            <div class="icon"><i class="fas fa-graduation-cap fa-2x"></i></div>
+            <h4>Capacitaciones BPM y HACCP <span class="info-btn" data-tooltip="BPM: Buenas Prácticas de Manufactura, asegura higiene y calidad. HACCP: Análisis de Peligros y Puntos Críticos de Control, previene riesgos alimentarios. Estas capacitaciones pueden reducir incidentes de seguridad alimentaria en un 30-40%, mejorando la confianza del cliente y superando a competidores no certificados."></span></h4>
+            <ul>
+              <li><input type="checkbox" class="service-checkbox" value="Formación en Buenas Prácticas de Manufactura (BPM)"> Formación en Buenas Prácticas de Manufactura (BPM)</li>
+              <li><input type="checkbox" class="service-checkbox" value="Capacitación en HACCP"> Capacitación en HACCP</li>
+            </ul>
+            <div class="text-button">
+              <a href="#contact">Más Información <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="service-item fourth-service">
+            <div class="icon"><i class="fas fa-file-alt fa-2x"></i></div>
+            <h4>Asesoría Administrativa <span class="info-btn" data-tooltip="Gestión de permisos y contratos para cumplir normativas. Puede ahorrar un 10-20% en costos administrativos y mejorar la competitividad al garantizar cumplimiento legal, superando a negocios con problemas regulatorios."></span></h4>
+            <ul>
+              <li><input type="checkbox" class="service-checkbox" value="Obtención de resolución sanitaria"> Obtención de resolución sanitaria</li>
+              <li><input type="checkbox" class="service-checkbox" value="Tramitación de permisos municipales"> Tramitación de permisos municipales</li>
+              <li><input type="checkbox" class="service-checkbox" value="Asesoría en inicio de actividades e IVA"> Asesoría en inicio de actividades e IVA</li>
+              <li><input type="checkbox" class="service-checkbox" value="Declaración de renta anual"> Declaración de renta anual</li>
+              <li><input type="checkbox" class="service-checkbox" value="Gestión de contratos de personal"> Gestión de contratos de personal</li>
+            </ul>
+            <div class="text-button">
+              <a href="#contact">Más Información <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Buttons -->
+  <div class="floating-buttons">
+    <a href="#" class="whatsapp-btn" id="whatsapp-btn"><i class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a>
+    <a href="#" class="email-btn" id="email-btn"><i class="fas fa-envelope"></i> Cotizar por Correo</a>
+  </div>
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="section-heading">
+            <h4>Sobre <em>Nuestra Empresa</em> y lo que Hacemos</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Somos líderes en asesoría gastronómica y administrativa, ayudando a negocios de alimentos y bebidas a optimizar procesos, cumplir normativas y aumentar su rentabilidad.
+              <br>Hemos trabajado con una variedad de clientes, desde restaurantes y cafeterías hasta food trucks, brindando soluciones personalizadas que se adaptan a sus necesidades específicas.
+              <br>Nuestro enfoque se basa en la mejora continua, la capacitación de equipos y la implementación de sistemas eficientes que garantizan el éxito a largo plazo de tu negocio gastronómico.
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Optimización de Costos</a></h4>
+                <p>Reducimos desperdicios y mejoramos márgenes.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Cumplimiento Normativo</a></h4>
+                <p>Te ayudamos con resoluciones sanitarias y permisos.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Capacitaciones</a></h4>
+                <p>Formamos a tu equipo en BPM y HACCP.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="box-item">
+                <h4><a href="#">Gestión Administrativa</a></h4>
+                <p>Simplificamos tus procesos tributarios y laborales.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-image">
+            <img src="assets/images/about-right-dec.png" alt="Equipo Gastronómico">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="clients" class="the-clients">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Lo que <em>Nuestros Clientes</em> Dicen de Nosotros</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Descubre cómo hemos ayudado a restaurantes y negocios gastronómicos a alcanzar sus objetivos.</p>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-7 align-self-center">
+                  <div class="menu">
+                    <div class="first-thumb active">
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Restaurante El Pollo Loco</h4>
+                            <span class="date">10 Enero 2025</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Restaurante</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <span class="rating">4.8</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Cafetería La Esquina</h4>
+                            <span class="date">5 Diciembre 2024</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Cafetería</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <span class="rating">4.5</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <h4>Food Truck Delicias</h4>
+                            <span class="date">20 Noviembre 2024</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 d-none d-sm-block">
+                            <span class="category">Food Truck</span>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 col-12">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <span class="rating">4.7</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-lg-5">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="assets/images/quote.png" alt="">
+                                <p>“Gracias a la asesoría de Anaiz, logramos reducir nuestros costos operativos en un 20% y cumplir con todas las normativas sanitarias.”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="assets/images/client-image.png" alt="">
+                                <div class="right-content">
+                                  <h4>Restaurante El Pollo loco</h4>
+                                  <span>Dueño y administrador empresario</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="assets/images/quote.png" alt="">
+                                <p>“Las capacitaciones en BPM fueron clave para nuestro equipo. Ahora operamos con mayor eficiencia y calidad.”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="assets/images/client-image.jpg" alt="">
+                                <div class="right-content">
+                                  <h4>Cafetería La Esquina</h4>
+                                  <span>Gerente</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="client-content">
+                                <img src="assets/images/quote.png" alt="">
+                                <p>“La gestión administrativa nos permitió enfocarnos en nuestro negocio mientras ellos manejaban los permisos y contratos.”</p>
+                              </div>
+                              <div class="down-content">
+                                <img src="assets/images/client-image_l.png" alt="">
+                                <div class="right-content">
+                                  <h4>Food Truck Delicias</h4>
+                                  <span>Propietario</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Nuestros <em>Planes de Asesoría</em> Personalizados</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Contáctanos para obtener una cotización personalizada según los servicios que necesitas para tu negocio.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">Consultar</span>
+            <h4>Plan Básico</h4>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="">
+            </div>
+            <ul>
+              <li>Fichas técnicas y costos básicos</li>
+              <li>Capacitación inicial en BPM</li>
+              <li class="non-function">Optimización laboral</li>
+              <li class="non-function">Asesoría administrativa completa</li>
+            </ul>
+            <div class="border-button">
+              <a href="#services">Cotizar Ahora</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-pro">
+            <span class="price">Consultar</span>
+            <h4>Plan Avanzado</h4>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="">
+            </div>
+            <ul>
+              <li>Fichas técnicas y costos avanzados</li>
+              <li>Capacitaciones BPM y HACCP</li>
+              <li>Optimización laboral parcial</li>
+              <li class="non-function">Asesoría administrativa completa</li>
+            </ul>
+            <div class="border-button">
+              <a href="#services">Cotizar Ahora</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="pricing-item-regular">
+            <span class="price">Consultar</span>
+            <h4>Plan Premium</h4>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="">
+            </div>
+            <ul>
+              <li>Fichas técnicas y costos completos</li>
+              <li>Capacitaciones BPM y HACCP</li>
+              <li>Optimización laboral completa</li>
+              <li>Asesoría administrativa integral</li>
+            </ul>
+            <div class="border-button">
+              <a href="#services">Cotizar Ahora</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <footer id="newsletter">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Suscríbete para recibir nuestras ofertas, carta y tendencias gastronómicas</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+          <form id="newsletter-form" action="https://docs.google.com/forms/u/0/d/e/YOUR_FORM_ID/formResponse" method="POST">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <input type="email" name="entry.1234567890" class="email" placeholder="Correo Electrónico..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <button type="submit" class="main-button">Suscribirse Ahora <i class="fa fa-angle-right"></i></button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Contáctanos</h4>
+            <p>Los Angeles, Chile</p>
+            <p><a href="tel:+56972250627">+56972250627</a></p>
+            <p><a href="mailto:anaiizburgoos@gmail.com">anaiizburgoos@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Sobre Nosotros</h4>
+            <ul>
+              <li><a href="#top">Inicio</a></li>
+              <li><a href="#services">Servicios</a></li>
+              <li><a href="#about">Nosotros</a></li>
+              <li><a href="#clients">Testimonios</a></li>
+              <li><a href="#pricing">Precios</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Enlaces Útiles</h4>
+            <ul>
+              <li><a href="#">Recursos Gratuitos</a></li>
+              <li><a href="#">Normativas Sanitarias</a></li>
+              <li><a href="#">Capacitaciones</a></li>
+              <li><a href="#">Gestión Gastronómica</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/animation.js"></script>
+  <script src="assets/js/imagesloaded.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script>
+    // Theme Toggle Functionality
+    const toggleButton = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+    const themeIcon = toggleButton.querySelector('i');
+
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      htmlElement.setAttribute('data-theme', 'dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggleButton.addEventListener('click', () => {
+      const currentTheme = htmlElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      htmlElement.setAttribute('data-theme', newTheme);
+      themeIcon.classList.toggle('fa-moon', newTheme === 'light');
+      themeIcon.classList.toggle('fa-sun', newTheme === 'dark');
+      
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // WhatsApp and Email button functionality
+    document.getElementById('whatsapp-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const checkboxes = document.querySelectorAll('.service-checkbox:checked');
+      const selectedServices = Array.from(checkboxes).map(cb => cb.value).join(', ');
+      const message = selectedServices ? 
+        `Hola Anaiz, quiero una cotización de servicios como: ${selectedServices}.` : 
+        'Hola Anaiz, quiero una cotización de servicios.';
+      const whatsappUrl = `https://wa.me/+56972250627?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    });
+
+    document.getElementById('email-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const checkboxes = document.querySelectorAll('.service-checkbox:checked');
+      const selectedServices = Array.from(checkboxes).map(cb => cb.value).join(', ');
+      const subject = 'Solicitud de Cotización';
+      const body = selectedServices ? 
+        `Hola Anaiz, quiero una cotización de servicios como: ${selectedServices}.` : 
+        'Hola Anaiz, quiero una cotización de servicios.';
+      const mailtoUrl = `mailto:anaiizburgoos@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.open(mailtoUrl, '_blank');
+    });
+
+    // Google Form Submission
+    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const formData = new FormData(form);
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+      .then(() => {
+        alert('¡Gracias por suscribirte! Recibirás nuestras actualizaciones pronto.');
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+        alert('Hubo un error al enviar el formulario. Por favor, intenta de nuevo.');
+      });
+    });
+  </script>
+</body>
+</html>
